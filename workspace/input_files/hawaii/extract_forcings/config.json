@@ -1,0 +1,125 @@
+{
+    "caseroot": "/glade/work/shanru/crocodile2026/workspace/hawaii",
+    "streamyears": {
+        "name": "StreamYears",
+        "inputs": {
+            "case_cesmroot": "/glade/work/shanru/crocodile2026/CESM_DA",
+            "start_date": "20230615",
+            "end_date": "20230618",
+            "stream_year_padding": 1,
+            "narrow_stream_files": true
+        },
+        "outputs": {
+            "datm_streams": {
+                "status": "skipped",
+                "reason": "run years 2023-2023 fall outside the 1958-2016 covered by CORE_IAF_JRA"
+            },
+            "drof_streams": {
+                "status": "skipped",
+                "reason": "no active drof"
+            }
+        }
+    },
+    "conditions": {
+        "name": "conditions",
+        "inputs": {
+            "start_date": "20230615",
+            "end_date": "20230618",
+            "boundaries": [
+                "north",
+                "south",
+                "east",
+                "west"
+            ],
+            "product_name": "GLORYS",
+            "function_name": "get_glorys_data_from_rda",
+            "compset": "1850_DATM%JRA_SLND_SICE_MOM6%REGIONAL_SROF_SGLC_SWAV_DART%1",
+            "function_args": {
+                "buf": 1.0
+            }
+        },
+        "outputs": {
+            "INIT_LAYERS_FROM_Z_FILE": "True",
+            "Z_INIT_ALE_REMAPPING": true,
+            "TEMP_SALT_INIT_VERTICAL_REMAP_ONLY": true,
+            "DEPRESS_INITIAL_SURFACE": true,
+            "VELOCITY_CONFIG": "file",
+            "TEMP_SALT_Z_INIT_FILE": "init_tracers_filled.nc",
+            "SURFACE_HEIGHT_IC_FILE": "init_eta_filled.nc",
+            "VELOCITY_FILE": "init_vel_filled.nc",
+            "Z_INIT_FILE_PTEMP_VAR": "temp",
+            "Z_INIT_FILE_SALT_VAR": "salt",
+            "SURFACE_HEIGHT_IC_VAR": "eta_t",
+            "U_IC_VAR": "u",
+            "V_IC_VAR": "v",
+            "OBC_NUMBER_OF_SEGMENTS": 4,
+            "OBC_FREESLIP_VORTICITY": "False",
+            "OBC_FREESLIP_STRAIN": "False",
+            "OBC_COMPUTED_VORTICITY": "True",
+            "OBC_COMPUTED_STRAIN": "True",
+            "OBC_ZERO_BIHARMONIC": "True",
+            "OBC_TRACER_RESERVOIR_LENGTH_SCALE_OUT": "3.0E+04",
+            "OBC_TRACER_RESERVOIR_LENGTH_SCALE_IN": "3000.0",
+            "BRUSHCUTTER_MODE": "True",
+            "ENABLE_BUGS_BY_DEFAULT": "False",
+            "date_format": "%Y%m%d",
+            "information": {
+                "product_name": "glorys",
+                "description": "GLORYS (Global Ocean Physics Reanalysis) is a public dataset provided through the copernicus marine service.",
+                "link": "https://data.marine.copernicus.eu/product/GLOBAL_MULTIYEAR_PHY_001_030/description",
+                "time_var_name": "time",
+                "time_units": "days",
+                "boundary_fill_method": "regional_mom6",
+                "tracer_x_coord": "longitude",
+                "tracer_y_coord": "latitude",
+                "u_var_name": "uo",
+                "v_var_name": "vo",
+                "u_y_coord": "latitude",
+                "u_x_coord": "longitude",
+                "v_x_coord": "longitude",
+                "v_y_coord": "latitude",
+                "u_lat_coord": "latitude",
+                "u_lon_coord": "longitude",
+                "v_lat_coord": "latitude",
+                "v_lon_coord": "longitude",
+                "tracer_lat_coord": "latitude",
+                "tracer_lon_coord": "longitude",
+                "eta_var_name": "zos",
+                "depth_coord": "depth",
+                "tracer_var_names": {
+                    "temp": "thetao",
+                    "salt": "so"
+                },
+                "calendar": {
+                    "cf": "standard",
+                    "cesm": "GREGORIAN",
+                    "mom6": "gregorian"
+                }
+            },
+            "get_step_days": 7,
+            "regrid_step_days": 30,
+            "boundary_number_conversion": {
+                "north": 1,
+                "south": 2,
+                "east": 3,
+                "west": 4
+            },
+            "preview": false,
+            "function_args": {
+                "buf": 1.0
+            },
+            "OBC_SEGMENT_001": "\"J=N,I=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN\"",
+            "OBC_SEGMENT_001_VELOCITY_NUDGING_TIMESCALES": "0.3, 360.0",
+            "OBC_SEGMENT_001_DATA": "\"U=file:forcing_obc_segment_001.nc(u),V=file:forcing_obc_segment_001.nc(v),SSH=file:forcing_obc_segment_001.nc(eta),TEMP=file:forcing_obc_segment_001.nc(temp),SALT=file:forcing_obc_segment_001.nc(salt)\"",
+            "OBC_SEGMENT_002": "\"J=0,I=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN\"",
+            "OBC_SEGMENT_002_VELOCITY_NUDGING_TIMESCALES": "0.3, 360.0",
+            "OBC_SEGMENT_002_DATA": "\"U=file:forcing_obc_segment_002.nc(u),V=file:forcing_obc_segment_002.nc(v),SSH=file:forcing_obc_segment_002.nc(eta),TEMP=file:forcing_obc_segment_002.nc(temp),SALT=file:forcing_obc_segment_002.nc(salt)\"",
+            "OBC_SEGMENT_003": "\"I=N,J=0:N,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN\"",
+            "OBC_SEGMENT_003_VELOCITY_NUDGING_TIMESCALES": "0.3, 360.0",
+            "OBC_SEGMENT_003_DATA": "\"U=file:forcing_obc_segment_003.nc(u),V=file:forcing_obc_segment_003.nc(v),SSH=file:forcing_obc_segment_003.nc(eta),TEMP=file:forcing_obc_segment_003.nc(temp),SALT=file:forcing_obc_segment_003.nc(salt)\"",
+            "OBC_SEGMENT_004": "\"I=0,J=N:0,FLATHER,ORLANSKI,NUDGED,ORLANSKI_TAN,NUDGED_TAN\"",
+            "OBC_SEGMENT_004_VELOCITY_NUDGING_TIMESCALES": "0.3, 360.0",
+            "OBC_SEGMENT_004_DATA": "\"U=file:forcing_obc_segment_004.nc(u),V=file:forcing_obc_segment_004.nc(v),SSH=file:forcing_obc_segment_004.nc(eta),TEMP=file:forcing_obc_segment_004.nc(temp),SALT=file:forcing_obc_segment_004.nc(salt)\""
+        }
+    }
+}
