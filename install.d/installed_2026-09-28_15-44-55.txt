@@ -1,0 +1,41 @@
+CrocoDash:
+    path:   /glade/work/shanru/crocodile2026/CrocoDash
+    commit: 4d5037565e3dc193fbc79c007079809524ccd293
+    conda environment: CrocoDash
+
+CrocoGallery notebooks:
+    path:   /glade/work/shanru/crocodile2026/CrocoGallery
+    commit: ff0f0686e04464d201e9d67d2e7473dc3e7949d8
+    workspace: /glade/work/shanru/crocodile2026/workspace/
+    case directory: /glade/work/shanru/crocodile2026/croc_cases
+    input directory: /glade/work/shanru/crocodile2026/croc_input
+    - crocodash.tutorial-ocn -> crocodash.tutorial-ocn.ipynb
+    - crocodash.tutorial-ocn-wav -> crocodash.tutorial-ocn-wav.ipynb
+    - crocodash.tutorial-ocn-wav-ice -> crocodash.tutorial-ocn-wav-ice.ipynb
+    - crocodash.projects.bering_diagnostics -> crocodash.projects.bering_diagnostics.ipynb
+    - model2obs.tutorial_MOM6-CL-comparison-Hawaii -> model2obs.tutorial_MOM6-CL-comparison-Hawaii.ipynb
+    - model2obs.tutorial_MOM6-CL-comparison-NWA-parallel -> model2obs.tutorial_MOM6-CL-comparison-NWA-parallel.ipynb
+    - model2obs.tutorial_CrocoLake_map_temperature -> model2obs.tutorial_CrocoLake_map_temperature.ipynb
+    - dart.tutorial1_real_observations -> dart.tutorial1_real_observations.ipynb
+    - dart.tutorial2_synthetic_observations -> dart.tutorial2_synthetic_observations.ipynb
+    - dart.tutorial3_cycling_dart_cesm -> dart.tutorial3_cycling_dart_cesm.ipynb
+CESM:
+    path:   /glade/work/shanru/crocodile2026/CESM
+    commit: 16dd39642a99c7072175611dc03f096eeb7d2b58
+
+CESM_DA:
+    path:   /glade/work/shanru/crocodile2026/CESM_DA
+    commit: fa0f040e525ab828e35060dc2826dd8e5653d605
+    conda environment: CESM_DA
+
+MODEL2OBS:
+    path:   /glade/work/shanru/crocodile2026/model2obs
+    commit: 317af3633689e8ae01b2f5e28faaa92d4e16f1b6
+    conda environment: model2obs
+    DART root path: /glade/u/home/emilanese/work/DART-11.21.2-Casper
+
+mom6-tools:
+    path:   /glade/work/shanru/crocodile2026/mom6-tools
+    commit: 8f07f2ce7001c477c43571fe6f1ac8c28ffd5d85
+    conda environment: mom6-tools
+
